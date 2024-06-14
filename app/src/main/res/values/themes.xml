@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Cheezery_ContrerasLuis" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="colorPrimary">@color/very_purple</item>
+        <item name="colorPrimaryVariant">@color/less_purple</item>
+        <item name="colorSecondary">@color/pinky</item>
+        <item name="colorSecondaryVariant">@color/last_pink</item>
+        <item name="colorOnPrimary">@color/dusty_white</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="Theme.Cheezery_ContrerasLuis" parent="Base.Theme.Cheezery_ContrerasLuis" />
+</resources>
