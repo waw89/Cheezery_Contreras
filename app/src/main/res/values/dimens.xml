@@ -6,4 +6,5 @@
     <dimen name="menu_buttons_margin">2dp</dimen>
     <dimen name="menu_buttonstext">15sp</dimen>
     <dimen name="menu_buttons_padding_v">15dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

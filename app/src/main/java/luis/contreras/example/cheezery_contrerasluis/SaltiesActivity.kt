@@ -11,33 +11,36 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-class SaltiesActivity:AppCompatActivity(){
-var salties = ArrayList<Product>()
+class SaltiesActivity : AppCompatActivity() {
+    var salties = ArrayList<Product>()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_salties)
+        addProducts()
 
-override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    enableEdgeToEdge()
-    setContentView(R.layout.activity_salties)
-    addProducts()
-    var listView: ListView = findViewById(R.id.list_view_salties) as ListView
-    var adapter: SaltiesActivity.ProductAdapter = SaltiesActivity.ProductAdapter(salties, this)
-    listView.adapter = adapter
+        var listView: ListView = findViewById(R.id.list_view_salties) as ListView
 
-}
+        var adapter: SweetsActivity.ProductAdapter =
+            SweetsActivity.ProductAdapter(salties, this)
+
+        listView.adapter = adapter
+    }
 
     fun addProducts(){
+        salties.add(Product("Hot Chocolate", R.drawable.hotchocolate, "Caramel syrup meets coffee, milk and ice and whipped cream and buttery caramel sauce layer the love on top.", 5.0))
+        salties.add(Product("Capuccino", R.drawable.capuccino, "Rich mocha-flavored sauce meets up with chocolaty chips, milk and ice for a blender bash.", 6.0))
+        salties.add(Product("Chai Latte", R.drawable.chailatte, "Created by steeping medium-to-coarse ground coffee in room temperature water for 12 hours or longer.", 3.0))
+        salties.add(Product("Matcha Latte", R.drawable.matcha, "Leafy taste of matcha green tea powder with creamy milk and a little sugar for a flavor balance that will leave you feeling ready and raring to go.", 4.0))
+        salties.add(Product("Espresso", R.drawable.espresso, "Chocolate ice cream, and oreo cookies. Topped with whipped cream with cocoa and chocolate syrup.", 7.0))
+        salties.add(Product("Americano", R.drawable.americano, "Vanilla ice cream, mixed with peanut butter and chocolate.", 7.0))
 
 
-        salties.add(Product("Chicken crepes", R.drawable.chickencrepes, "Fine crepes stuffed with Alfredo chicken, spinach and mushrooms.", 6.0))
-        salties.add(Product("Club Sandwich", R.drawable.clubsandwich, "A delicious sandwich served with french fries.", 5.0))
-        salties.add(Product("Panini", R.drawable.hampanini, "Sandwich made with Italian bread  served warmed by grilling", 4.0))
-        salties.add(Product("Philly cheese steak", R.drawable.phillycheesesteak, "Smothered in grilled onions, green peppers, mushrooms, and Provolone.", 6.0))
-        salties.add(Product("Nachos", R.drawable.nachos, "Tortilla chips layered with beef and   melted cheddar cheese. Served with fried beans, guacamole, pico de gallo, and sour topping.",  7.0))
-
-       }
-
+    }
     class ProductAdapter: BaseAdapter {
 
         var productos = ArrayList<Product>()
@@ -67,8 +70,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
             var image = view.findViewById(R.id.productImg) as ImageView
             var name = view.findViewById(R.id.productName) as TextView
-            var description = view.findViewById(R.id.productDescription) as TextView
-            var price = view.findViewById(R.id.productPrice) as TextView
+            var description = view.findViewById(R.id.productName) as TextView
+            var price = view.findViewById(R.id.productName) as TextView
 
 
             image.setImageResource(prod.image)
@@ -79,4 +82,6 @@ override fun onCreate(savedInstanceState: Bundle?) {
             return view
         }
     }
+
+
 }

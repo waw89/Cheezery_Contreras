@@ -32,16 +32,15 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btnSalties.setOnClickListener{
-
-            var intent:Intent  =Intent(this, SaltiesActivity::class.java)
-            startActivity(intent)
-        }
         btnSweets.setOnClickListener{
 
             var intent:Intent  =Intent(this, SweetsActivity::class.java)
             startActivity(intent)
         }
+        btnSalties.setOnClickListener{
 
+            var intent:Intent  =Intent(this, SaltiesActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
